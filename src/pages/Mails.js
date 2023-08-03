@@ -25,22 +25,52 @@ function Mails() {
     if (reason === "clickaway") {
       return;
     }
-    return (
-      <Box>
-       
-        <MailCard />
-        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-          <Alert
-            onClose={handleClose}
-            severity={message.severity}
-            sx={{ width: "100%" }}
-          >
-            {message.message}
-          </Alert>
-        </Snackbar>
-      </Box>
-    );
+
+    setOpen(false);
   };
+  return (
+    <Box sx={{ minHeight: "100vh" }}>
+      {/* Issue with cors, cannot access the API.
+         {mails !== null? mails&& mails.map(mail => {
+            return(
+                <MailCard created={mail["created_by"]} last_updated={mail["last_updated"]} date_created={mail["date_created"]} delivered={mail["to_DELIVERED_BY"]} />
+            )
+        }):null} */}
+      <MailCard
+        created="Person"
+        last_updated="Date"
+        date_created="Date created"
+        delivered="Person2"
+      />
+      <MailCard
+        created="Person"
+        last_updated="Date"
+        date_created="Date created"
+        delivered="Person2"
+      />
+      <MailCard
+        created="Person"
+        last_updated="Date"
+        date_created="Date created"
+        delivered="Person2"
+      />
+      <MailCard
+        created="Person"
+        last_updated="Date"
+        date_created="Date created"
+        delivered="Person2"
+      />
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity={message.severity}
+          sx={{ width: "100%" }}
+        >
+          {message.message}
+        </Alert>
+      </Snackbar>
+    </Box>
+  );
 }
 
 export default Mails;
