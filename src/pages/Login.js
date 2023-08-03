@@ -62,7 +62,7 @@ function Login() {
           await new Promise((res) => setTimeout(res, 2000));
           navigate("/mails");
         } else {
-          setMessage({ message: res.message, severity: "error" });
+          setMessage({ message: res, severity: "error" });
           handleClick();
           setLoading(false);
         }

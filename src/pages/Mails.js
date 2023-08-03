@@ -16,7 +16,7 @@ function Mails() {
           setMails(val.body);
         })
         .catch((err) => {
-          setMessage({ message: err, severity: "error" });
+          setMessage({ message: err.message, severity: "error" });
           handleClick();
         });
     })();
